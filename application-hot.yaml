@@ -1,0 +1,34 @@
+msg: "Hello world - this is from config server - HOT Environment"
+springdoc:
+  show-actuator: 'true'
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  datasource:
+    username: sa
+    password: ''
+    url: jdbc:h2:file:./demodb
+    driverClassName: org.h2.Driver
+  jpa:
+    defer-datasource-initialization: 'true'
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  port: 8080
+  cors: false
+  error:
+    include-stacktrace: never
+    include-exception: 'false'
+    include-binding-errors: always
+    include-message: always
+# Logging Level
+logging:
+  level:
+    br:
+      com:
+        mobiis: DEBUG
